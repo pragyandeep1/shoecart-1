@@ -1,0 +1,42 @@
+<div class="main">
+    <div>
+        <input id="search-box" placeholder="Search for your favourite product" [(ngModel)]="searchText">
+        <button id="search-btn" *ngIf="searchText" (click)="searchButton()"> Search</button>
+        <h1 *ngIf="text">Showing result for: {{text}}</h1>
+       
+         
+    </div>
+
+
+    <div style="display: flex;">
+        <img src="assets/logo.png" width="50">
+        <p>Check your cart: {{count}}</p>
+    </div>
+
+    <div class="products" >
+
+        <div id="product"  *ngFor="let item of products; let i = index">
+            <img src={{item.image}} style="width: 240px;">
+            <h2>{{item.name}}</h2>
+            <div style="display: flex; column-gap: 8px;">
+                <h3 style="display: inline;">{{item.price}}</h3>
+                <h4 style="color:#bbb; display: inline; text-decoration: line-through;">{{item.aprice}}</h4>
+            </div>
+            <p *ngIf="item.inStock" style="color: green;">Available</p>
+            <p *ngIf="!item.inStock" style="color:red; ">Out of Stock</p>
+            
+            <button *ngIf="item.inStock" id="add-to-cart-btn" (click)="addToCart(i)" style="cursor: pointer;">
+                <img src="assets/cart.png" width="30">
+               <p style="display: inline;">Add to cart</p>
+              
+            </button>
+
+
+            <button *ngIf="!item.inStock" id="add-to-cart-btn" onclick="alert('You will get an email whenever product is in stock')" style="cursor: pointer;">
+               Notify Me 
+            </button>
+        </div>
+
+    </div>
+    
+</div>

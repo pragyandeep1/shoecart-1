@@ -1,0 +1,30 @@
+.container{
+    background-color: #bbb;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    width:60%;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    background-color: black;
+    color:white;
+    height: 40px;
+    width:100px;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+li:hover{
+    border:2px solid yellow;
+    scale: 1.3;
+}
