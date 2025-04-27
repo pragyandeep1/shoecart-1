@@ -1,3 +1,5 @@
-<app-cart>
-
-</app-cart>
+<app-header *ngIf="!cartComponent?.isCartVisible"></app-header>
+<hr>
+<app-main *ngIf="!cartComponent?.isCartVisible"></app-main>
+<hr>
+<app-cart></app-cart>
